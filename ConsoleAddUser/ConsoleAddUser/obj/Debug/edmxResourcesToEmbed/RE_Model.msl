@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Model_REContainer" CdmEntityContainer="RE_Ent">
+    <EntitySetMapping Name="Branch">
+      <EntityTypeMapping TypeName="Model_RE.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="IdBranch" ColumnName="IdBranch" />
+          <ScalarProperty Name="AdressBranch" ColumnName="AdressBranch" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="Model_RE.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="idCity" ColumnName="idCity" />
+          <ScalarProperty Name="City1" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="Model_RE.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="FirstNameClient" ColumnName="FirstNameClient" />
+          <ScalarProperty Name="SecondNameClient" ColumnName="SecondNameClient" />
+          <ScalarProperty Name="PatronymicClient" ColumnName="PatronymicClient" />
+          <ScalarProperty Name="AdressClient" ColumnName="AdressClient" />
+          <ScalarProperty Name="PassportSeriesClient" ColumnName="PassportSeriesClient" />
+          <ScalarProperty Name="PassportNumberClient" ColumnName="PassportNumberClient" />
+          <ScalarProperty Name="DateIssueClient" ColumnName="DateIssueClient" />
+          <ScalarProperty Name="WhoIssuedClient" ColumnName="WhoIssuedClient" />
+          <ScalarProperty Name="TelephoneNumberClient" ColumnName="TelephoneNumberClient" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DogovorOVlad" ColumnName="DogovorOVlad" />
+          <ScalarProperty Name="clientType" ColumnName="clientType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientType">
+      <EntityTypeMapping TypeName="Model_RE.ClientType">
+        <MappingFragment StoreEntitySet="ClientType">
+          <ScalarProperty Name="idCT" ColumnName="idCT" />
+          <ScalarProperty Name="Cltype" ColumnName="Cltype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="Model_RE.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Couinty" ColumnName="Couinty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DogovorKupliProdaji">
+      <EntityTypeMapping TypeName="Model_RE.DogovorKupliProdaji">
+        <MappingFragment StoreEntitySet="DogovorKupliProdaji">
+          <ScalarProperty Name="idDog" ColumnName="idDog" />
+          <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+          <ScalarProperty Name="idProd" ColumnName="idProd" />
+          <ScalarProperty Name="idPoc" ColumnName="idPoc" />
+          <ScalarProperty Name="idRE" ColumnName="idRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DogovorVladeniaType">
+      <EntityTypeMapping TypeName="Model_RE.DogovorVladeniaType">
+        <MappingFragment StoreEntitySet="DogovorVladeniaType">
+          <ScalarProperty Name="idDogovor" ColumnName="idDogovor" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="Model_RE.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="PassportSeries" ColumnName="PassportSeries" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="DateIssue" ColumnName="DateIssue" />
+          <ScalarProperty Name="WhoIssued" ColumnName="WhoIssued" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="Model_RE.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="idGender" ColumnName="idGender" />
+          <ScalarProperty Name="Gender1" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="Model_RE.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="idPost" ColumnName="idPost" />
+          <ScalarProperty Name="NamePost" ColumnName="NamePost" />
+          <ScalarProperty Name="descriptionPost" ColumnName="descriptionPost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RealEstate">
+      <EntityTypeMapping TypeName="Model_RE.RealEstate">
+        <MappingFragment StoreEntitySet="RealEstate">
+          <ScalarProperty Name="IdRealEstateRE" ColumnName="IdRealEstateRE" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="Apartament" ColumnName="Apartament" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="ploshad" ColumnName="ploshad" />
+          <ScalarProperty Name="cena" ColumnName="cena" />
+          <ScalarProperty Name="opisanie" ColumnName="opisanie" />
+          <ScalarProperty Name="komnat" ColumnName="komnat" />
+          <ScalarProperty Name="Valuta" ColumnName="Valuta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="Model_RE.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="idStat" ColumnName="idStat" />
+          <ScalarProperty Name="Status1" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model_RE.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeRealEstate">
+      <EntityTypeMapping TypeName="Model_RE.TypeRealEstate">
+        <MappingFragment StoreEntitySet="TypeRealEstate">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model_RE.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Valuta">
+      <EntityTypeMapping TypeName="Model_RE.Valuta">
+        <MappingFragment StoreEntitySet="Valuta">
+          <ScalarProperty Name="idValuta" ColumnName="idValuta" />
+          <ScalarProperty Name="Valuta1" ColumnName="Valuta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="Model_RE.Services">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="idServices" ColumnName="idServices" />
+          <ScalarProperty Name="NameServices" ColumnName="NameServices" />
+          <ScalarProperty Name="DescriptionService" ColumnName="DescriptionService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

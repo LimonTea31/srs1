@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model_RE" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="IdBranch" />
+    </Key>
+    <Property Name="IdBranch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdressBranch" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_Branch_City" FromRole="Branch" ToRole="City" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Branch" FromRole="Branch" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="idCity" />
+    </Key>
+    <Property Name="idCity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_Branch_City" FromRole="City" ToRole="Branch" />
+    <NavigationProperty Name="Country1" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="RealEstate" Relationship="Self.FK_RealEstate_City" FromRole="City" ToRole="RealEstate" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstNameClient" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SecondNameClient" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PatronymicClient" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AdressClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassportSeriesClient" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassportNumberClient" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateIssueClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WhoIssuedClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelephoneNumberClient" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DogovorOVlad" Type="Int32" />
+    <Property Name="clientType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ClientType1" Relationship="Self.FK_Client_ClientType" FromRole="Client" ToRole="ClientType" />
+    <NavigationProperty Name="DogovorVladeniaType" Relationship="Self.FK_ClientProd_DogovorVladeniaType" FromRole="Client" ToRole="DogovorVladeniaType" />
+    <NavigationProperty Name="DogovorKupliProdaji" Relationship="Self.FK_DogovorKupliProdaji_Client" FromRole="Client" ToRole="DogovorKupliProdaji" />
+    <NavigationProperty Name="DogovorKupliProdaji1" Relationship="Self.FK_DogovorKupliProdaji_Client1" FromRole="Client" ToRole="DogovorKupliProdaji" />
+  </EntityType>
+  <EntityType Name="ClientType">
+    <Key>
+      <PropertyRef Name="idCT" />
+    </Key>
+    <Property Name="idCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cltype" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_ClientType" FromRole="ClientType" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Couinty" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_City_Country" FromRole="Country" ToRole="City" />
+  </EntityType>
+  <EntityType Name="DogovorKupliProdaji">
+    <Key>
+      <PropertyRef Name="idDog" />
+    </Key>
+    <Property Name="idDog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmployee" Type="Int32" Nullable="false" />
+    <Property Name="idProd" Type="Int32" Nullable="false" />
+    <Property Name="idPoc" Type="Int32" Nullable="false" />
+    <Property Name="idRE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_DogovorKupliProdaji_Client" FromRole="DogovorKupliProdaji" ToRole="Client" />
+    <NavigationProperty Name="Client1" Relationship="Self.FK_DogovorKupliProdaji_Client1" FromRole="DogovorKupliProdaji" ToRole="Client" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_DogovorKupliProdaji_Employee" FromRole="DogovorKupliProdaji" ToRole="Employee" />
+    <NavigationProperty Name="RealEstate" Relationship="Self.FK_DogovorKupliProdaji_RealEstate" FromRole="DogovorKupliProdaji" ToRole="RealEstate" />
+  </EntityType>
+  <EntityType Name="DogovorVladeniaType">
+    <Key>
+      <PropertyRef Name="idDogovor" />
+    </Key>
+    <Property Name="idDogovor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ClientProd_DogovorVladeniaType" FromRole="DogovorVladeniaType" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="idEmployee" />
+    </Key>
+    <Property Name="idEmployee" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SecondName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Post" Type="Int32" Nullable="false" />
+    <Property Name="Branch" Type="Int32" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassportSeries" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassportNumber" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WhoIssued" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="userID" Type="Int32" />
+    <NavigationProperty Name="Branch1" Relationship="Self.FK_Employee_Branch" FromRole="Employee" ToRole="Branch" />
+    <NavigationProperty Name="DogovorKupliProdaji" Relationship="Self.FK_DogovorKupliProdaji_Employee" FromRole="Employee" ToRole="DogovorKupliProdaji" />
+    <NavigationProperty Name="Gender1" Relationship="Self.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
+    <NavigationProperty Name="Post1" Relationship="Self.FK_Employee_Post" FromRole="Employee" ToRole="Post" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Employee_User" FromRole="Employee" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="idGender" />
+    </Key>
+    <Property Name="idGender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Gender" FromRole="Gender" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="idPost" />
+    </Key>
+    <Property Name="idPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NamePost" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="descriptionPost" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Post" FromRole="Post" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="RealEstate">
+    <Key>
+      <PropertyRef Name="IdRealEstateRE" />
+    </Key>
+    <Property Name="IdRealEstateRE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="Int32" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="House" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apartament" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="ploshad" Type="Single" Nullable="false" />
+    <Property Name="cena" Type="Single" Nullable="false" />
+    <Property Name="opisanie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="komnat" Type="Int32" Nullable="false" />
+    <Property Name="Valuta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_RealEstate_City" FromRole="RealEstate" ToRole="City" />
+    <NavigationProperty Name="DogovorKupliProdaji" Relationship="Self.FK_DogovorKupliProdaji_RealEstate" FromRole="RealEstate" ToRole="DogovorKupliProdaji" />
+    <NavigationProperty Name="TypeRealEstate" Relationship="Self.FK_RealEstate_TypeRealEstate" FromRole="RealEstate" ToRole="TypeRealEstate" />
+    <NavigationProperty Name="Valuta1" Relationship="Self.FK_RealEstate_Valuta" FromRole="RealEstate" ToRole="Valuta" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="idStat" />
+    </Key>
+    <Property Name="idStat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TypeRealEstate">
+    <Key>
+      <PropertyRef Name="idType" />
+    </Key>
+    <Property Name="idType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RealEstate" Relationship="Self.FK_RealEstate_TypeRealEstate" FromRole="TypeRealEstate" ToRole="RealEstate" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="userID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_User" FromRole="Users" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Valuta">
+    <Key>
+      <PropertyRef Name="idValuta" />
+    </Key>
+    <Property Name="idValuta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Valuta1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RealEstate" Relationship="Self.FK_RealEstate_Valuta" FromRole="Valuta" ToRole="RealEstate" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="idServices" />
+      <PropertyRef Name="NameServices" />
+    </Key>
+    <Property Name="idServices" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameServices" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DescriptionService" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Branch_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="IdBranch" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Branch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_ClientType">
+    <End Role="ClientType" Type="Self.ClientType" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientType">
+        <PropertyRef Name="idCT" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="clientType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientProd_DogovorVladeniaType">
+    <End Role="DogovorVladeniaType" Type="Self.DogovorVladeniaType" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DogovorVladeniaType">
+        <PropertyRef Name="idDogovor" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="DogovorOVlad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Client1">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="idEmployee" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_RealEstate">
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RealEstate">
+        <PropertyRef Name="IdRealEstateRE" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idRE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="idGender" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="idPost" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_TypeRealEstate">
+    <End Role="TypeRealEstate" Type="Self.TypeRealEstate" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeRealEstate">
+        <PropertyRef Name="idType" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_Valuta">
+    <End Role="Valuta" Type="Self.Valuta" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Valuta">
+        <PropertyRef Name="idValuta" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="Valuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RE_Ent" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Branch" EntityType="Self.Branch" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="ClientType" EntityType="Self.ClientType" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="DogovorKupliProdaji" EntityType="Self.DogovorKupliProdaji" />
+    <EntitySet Name="DogovorVladeniaType" EntityType="Self.DogovorVladeniaType" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="Post" EntityType="Self.Post" />
+    <EntitySet Name="RealEstate" EntityType="Self.RealEstate" />
+    <EntitySet Name="status" EntityType="Self.status" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TypeRealEstate" EntityType="Self.TypeRealEstate" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Valuta" EntityType="Self.Valuta" />
+    <EntitySet Name="Services" EntityType="Self.Services" />
+    <AssociationSet Name="FK_Branch_City" Association="Self.FK_Branch_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Branch" EntitySet="Branch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Branch" Association="Self.FK_Employee_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_City" Association="Self.FK_RealEstate_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_ClientType" Association="Self.FK_Client_ClientType">
+      <End Role="ClientType" EntitySet="ClientType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientProd_DogovorVladeniaType" Association="Self.FK_ClientProd_DogovorVladeniaType">
+      <End Role="DogovorVladeniaType" EntitySet="DogovorVladeniaType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Client" Association="Self.FK_DogovorKupliProdaji_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Client1" Association="Self.FK_DogovorKupliProdaji_Client1">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Employee" Association="Self.FK_DogovorKupliProdaji_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_RealEstate" Association="Self.FK_DogovorKupliProdaji_RealEstate">
+      <End Role="RealEstate" EntitySet="RealEstate" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Gender" Association="Self.FK_Employee_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_TypeRealEstate" Association="Self.FK_RealEstate_TypeRealEstate">
+      <End Role="TypeRealEstate" EntitySet="TypeRealEstate" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_Valuta" Association="Self.FK_RealEstate_Valuta">
+      <End Role="Valuta" EntitySet="Valuta" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAddUser", "ConsoleAddUser\ConsoleAddUser.csproj", "{77BC0DE3-08E6-48FD-91D1-B021D37710E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashPasswords", "HashPasswords\HashPasswords.csproj", "{75290334-81DF-422C-B8A4-A5979C24BC09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77BC0DE3-08E6-48FD-91D1-B021D37710E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BC0DE3-08E6-48FD-91D1-B021D37710E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BC0DE3-08E6-48FD-91D1-B021D37710E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BC0DE3-08E6-48FD-91D1-B021D37710E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75290334-81DF-422C-B8A4-A5979C24BC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75290334-81DF-422C-B8A4-A5979C24BC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75290334-81DF-422C-B8A4-A5979C24BC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75290334-81DF-422C-B8A4-A5979C24BC09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C13E1DF0-4962-4096-B3D2-8BC5414B0C4B}
+	EndGlobalSection
+EndGlobal

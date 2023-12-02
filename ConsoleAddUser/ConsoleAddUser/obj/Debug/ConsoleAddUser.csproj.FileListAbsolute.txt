@@ -1,0 +1,13 @@
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\ConsoleAddUser.exe.config
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\ConsoleAddUser.exe
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\ConsoleAddUser.pdb
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\obj\Debug\ConsoleAddUser.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\obj\Debug\ConsoleAddUser.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\obj\Debug\ConsoleAddUser.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\obj\Debug\ConsoleAddUser.exe
+C:\Users\ADMIN\source\repos\ConsoleAddUser\ConsoleAddUser\obj\Debug\ConsoleAddUser.pdb

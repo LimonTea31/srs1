@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f8f3e907392456baad81ec2a838968d" Name="Diagram1">
+        <EntityTypeShape EntityType="model_RE.Branch" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.City" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Client" Width="1.5" PointX="7.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.ClientType" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Country" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.DogovorKupliProdaji" Width="1.5" PointX="9.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.DogovorVladeniaType" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Employee" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Gender" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Post" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.RealEstate" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.status" Width="1.5" PointX="11.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.sysdiagrams" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.TypeRealEstate" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Users" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Valuta" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="model_RE.Services" Width="1.5" PointX="11.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="model_RE.FK_Branch_City" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_Employee_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_City_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_RealEstate_City" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_Client_ClientType" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_ClientProd_DogovorVladeniaType" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_DogovorKupliProdaji_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_DogovorKupliProdaji_Client1" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_DogovorKupliProdaji_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_DogovorKupliProdaji_RealEstate" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_Employee_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_Employee_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_Users_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_RealEstate_TypeRealEstate" ManuallyRouted="false" />
+        <AssociationConnector Association="model_RE.FK_RealEstate_Valuta" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

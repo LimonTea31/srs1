@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model_RE" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="IdBranch" />
+    </Key>
+    <Property Name="IdBranch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdressBranch" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="idCity" />
+    </Key>
+    <Property Name="idCity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstNameClient" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SecondNameClient" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PatronymicClient" Type="nvarchar" MaxLength="20" />
+    <Property Name="AdressClient" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassportSeriesClient" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PassportNumberClient" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="DateIssueClient" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WhoIssuedClient" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TelephoneNumberClient" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DogovorOVlad" Type="int" />
+    <Property Name="clientType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientType">
+    <Key>
+      <PropertyRef Name="idCT" />
+    </Key>
+    <Property Name="idCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cltype" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Couinty" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DogovorKupliProdaji">
+    <Key>
+      <PropertyRef Name="idDog" />
+    </Key>
+    <Property Name="idDog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmployee" Type="int" Nullable="false" />
+    <Property Name="idProd" Type="int" Nullable="false" />
+    <Property Name="idPoc" Type="int" Nullable="false" />
+    <Property Name="idRE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DogovorVladeniaType">
+    <Key>
+      <PropertyRef Name="idDogovor" />
+    </Key>
+    <Property Name="idDogovor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="idEmployee" />
+    </Key>
+    <Property Name="idEmployee" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="SecondName" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="25" />
+    <Property Name="Post" Type="int" Nullable="false" />
+    <Property Name="Branch" Type="int" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="TelephoneNumber" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="PassportSeries" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PassportNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="DateIssue" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WhoIssued" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="idGender" />
+    </Key>
+    <Property Name="idGender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="idPost" />
+    </Key>
+    <Property Name="idPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePost" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="descriptionPost" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="RealEstate">
+    <Key>
+      <PropertyRef Name="IdRealEstateRE" />
+    </Key>
+    <Property Name="IdRealEstateRE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="int" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="House" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apartament" Type="nvarchar" MaxLength="50" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="ploshad" Type="real" Nullable="false" />
+    <Property Name="cena" Type="real" Nullable="false" />
+    <Property Name="opisanie" Type="nvarchar" MaxLength="100" />
+    <Property Name="komnat" Type="int" Nullable="false" />
+    <Property Name="Valuta" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "pr-22.107k-gorsh-3-realEstate.dbo.Services" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="idServices" />
+      <PropertyRef Name="NameServices" />
+    </Key>
+    <Property Name="idServices" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameServices" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="DescriptionService" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="idStat" />
+    </Key>
+    <Property Name="idStat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TypeRealEstate">
+    <Key>
+      <PropertyRef Name="idType" />
+    </Key>
+    <Property Name="idType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="Valuta">
+    <Key>
+      <PropertyRef Name="idValuta" />
+    </Key>
+    <Property Name="idValuta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Valuta" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Branch_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_ClientType">
+    <End Role="ClientType" Type="Self.ClientType" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientType">
+        <PropertyRef Name="idCT" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="clientType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientProd_DogovorVladeniaType">
+    <End Role="DogovorVladeniaType" Type="Self.DogovorVladeniaType" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DogovorVladeniaType">
+        <PropertyRef Name="idDogovor" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="DogovorOVlad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Client1">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="idEmployee" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DogovorKupliProdaji_RealEstate">
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="1" />
+    <End Role="DogovorKupliProdaji" Type="Self.DogovorKupliProdaji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RealEstate">
+        <PropertyRef Name="IdRealEstateRE" />
+      </Principal>
+      <Dependent Role="DogovorKupliProdaji">
+        <PropertyRef Name="idRE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="IdBranch" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Branch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="idGender" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="idPost" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_User">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_TypeRealEstate">
+    <End Role="TypeRealEstate" Type="Self.TypeRealEstate" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeRealEstate">
+        <PropertyRef Name="idType" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealEstate_Valuta">
+    <End Role="Valuta" Type="Self.Valuta" Multiplicity="1" />
+    <End Role="RealEstate" Type="Self.RealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Valuta">
+        <PropertyRef Name="idValuta" />
+      </Principal>
+      <Dependent Role="RealEstate">
+        <PropertyRef Name="Valuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Model_REContainer">
+    <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientType" EntityType="Self.ClientType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DogovorKupliProdaji" EntityType="Self.DogovorKupliProdaji" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DogovorVladeniaType" EntityType="Self.DogovorVladeniaType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RealEstate" EntityType="Self.RealEstate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="status" EntityType="Self.status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeRealEstate" EntityType="Self.TypeRealEstate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Valuta" EntityType="Self.Valuta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Services].[idServices] AS [idServices], 
+    [Services].[NameServices] AS [NameServices], 
+    [Services].[DescriptionService] AS [DescriptionService]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Branch_City" Association="Self.FK_Branch_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Branch" EntitySet="Branch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_ClientType" Association="Self.FK_Client_ClientType">
+      <End Role="ClientType" EntitySet="ClientType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientProd_DogovorVladeniaType" Association="Self.FK_ClientProd_DogovorVladeniaType">
+      <End Role="DogovorVladeniaType" EntitySet="DogovorVladeniaType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Client" Association="Self.FK_DogovorKupliProdaji_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Client1" Association="Self.FK_DogovorKupliProdaji_Client1">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_Employee" Association="Self.FK_DogovorKupliProdaji_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DogovorKupliProdaji_RealEstate" Association="Self.FK_DogovorKupliProdaji_RealEstate">
+      <End Role="RealEstate" EntitySet="RealEstate" />
+      <End Role="DogovorKupliProdaji" EntitySet="DogovorKupliProdaji" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Branch" Association="Self.FK_Employee_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Gender" Association="Self.FK_Employee_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_City" Association="Self.FK_RealEstate_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_TypeRealEstate" Association="Self.FK_RealEstate_TypeRealEstate">
+      <End Role="TypeRealEstate" EntitySet="TypeRealEstate" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealEstate_Valuta" Association="Self.FK_RealEstate_Valuta">
+      <End Role="Valuta" EntitySet="Valuta" />
+      <End Role="RealEstate" EntitySet="RealEstate" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
